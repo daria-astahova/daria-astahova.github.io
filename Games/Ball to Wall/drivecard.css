@@ -1,0 +1,78 @@
+<style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #e6f7ff;
+        }
+
+        .maze-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .maze {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background-color: #3d3d3d;
+            border: 10px solid #006400;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hedgeVert,
+        .hedgeHor {
+            position: absolute;
+            background-color: #006400;
+        }
+
+        .hedgeVert {
+            width: 20px;
+            height: 100px;
+        }
+
+        .hedgeHor {
+            width: 100px;
+            height: 20px;
+        }
+
+        .hedgeVert:nth-child(odd) {
+            top: 0;
+        }
+
+        .hedgeHor:nth-child(even) {
+            top: 200px;
+        }
+
+        .hedgeVert:nth-child(2n) {
+            left: 0;
+        }
+
+        .hedgeHor:nth-child(2n + 1) {
+            left: 20px;
+        }
+
+        .player {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            transition: 0.2s;
+
+        }
+        .goal {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      background-color: #3498db; /* Use your desired shade of blue */
+      transform: rotate(45deg);
+    }
+
+  
+    </style>
