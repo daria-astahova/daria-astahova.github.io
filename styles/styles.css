@@ -37,6 +37,7 @@ nav ul li a {
     text-decoration: none;
 }
 
+
 /* Section styles */
 section {
     padding: 20px;
@@ -55,10 +56,10 @@ footer {
 }
 
 /* Hyperlink styles */
-a {
+body a {
     color: #7D5638;
 }
 
-a:hover {
+body a:hover {
     color: #1F2521;
 }
