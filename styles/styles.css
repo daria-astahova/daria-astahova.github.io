@@ -1,4 +1,15 @@
-/* Global styles */
+
+@media (max-width: 768px) {
+    /* Styles for screens smaller than 768px */
+    /* Adjust the styles as per your requirements */
+    header {
+        text-align: center;
+    }
+    header img {
+        width: 100%;
+        height: auto;
+    }
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #E5E0D2;
