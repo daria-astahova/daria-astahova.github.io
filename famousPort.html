@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daria Brown's Portfolio</title>
+    <link rel="stylesheet" href="stylesfake.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .container .left,
+        .container .right {
+            width: calc(50% - 10px);
+        }
+
+        .container .left img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container .right img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container .left,
+            .container .right {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container" id="intro">
+            <h1>Daria Brown's Portfolio</h1>
+            <p>Games, Interactive Media, and Mobile Technology Major</p>
+
+            <img src="images/1698703211743.jpg" alt="Daria Brown's Picture" width="auto" height="300px">
+
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="new.html#about">About</a></li>
+            <li><a href="new.html#projects">Projects</a>
+                <ul id="sub">
+                    <li><a href="new.html#game-design">Game Design</a></li>
+                    <li><a href="new.html#web-design">Web Design</a></li>
+                    <li><a href="new.html#film">Film</a></li>
+                </ul>
+            </li>
+            <li><a href="new.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section>
+            <div class="container">
+                <div class="left">
+                    <img src="images/IMG_E9436.JPG" alt="Photo 1">
+                    period
+                </div>
+                <div class="right">
+                    <h2>Lets Get Famous</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3Pd9Mm6t2jE"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <p><strong>Duration:</strong> March 9th 2024 - March 10th 2024</p>
+                    <!-- Your description content here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Add separate sections explaining photos and text content -->
+        <section>
+            <div class="container">
+                <div class="left">
+                    <h2>Photos</h2>
+                    <p>Add a description of the photos here.</p>
+                </div>
+                <div class="right">
+                    <h2>Text Content</h2>
+                    <p>Add a description of the text content here.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Daria Brown</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
