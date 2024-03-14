@@ -10,13 +10,16 @@
 
 
 body {
-    font-family: 'Pacifico', cursive;
+    font-family: 'Pacifico','Handwritten Font', cursive;
     padding: 0;
     background-color: var(--background); /* Light pink background */
     color: var(--text); /* Dark brown text */
     text-align: center;
+  
 }
-
+.content{
+    text-align: center;
+}
 .section {
     padding: 50px;
 }
@@ -102,16 +105,43 @@ a:hover {
     padding: 10px 0;
 }
 
-.left {
-    float: left;
-    width: 50%;
+.one {
+    border: 2px solid var(--secondary); /* Grey */
+    background-color: var(--secondary);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: border-color 0.3s ease; /* Smooth transition effect */
+    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
 }
 
-.right {
-    float: right;
-    width: 50%;
+.two {
+    border: 2px solid var(--background); /* Grey */
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: border-color 0.3s ease; /* Smooth transition effect */
+    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
 }
+.three{
+    border: 2px solid var(--primary); /* Grey */
+    background-color: var(--primary);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    transition: border-color 0.3s ease; /* Smooth transition effect */
+    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+}
+#character-buttons{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    color:var(--text);
 
+}
 .project:hover {
     border-color: var(--accent); /* Light purple */
 }
@@ -154,7 +184,7 @@ footer {
     color: var(--text); /* Custom color */
 }
 
-.navbar-nav .nav-link {
+.navbar-nav .nav-link  {
     color: var(--text); /* Custom color */
 }
 
