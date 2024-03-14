@@ -1,75 +1,95 @@
+:root {
+    --text: #0c0b0a; /* Dark brown for text */
+    --background: #f3e7e2; /* Light pink for background */
+    --primary: #E2C4BB; /* Brown for primary elements */
+    --secondary: #B6795F; /* Grey for secondary elements */
+    --accent: #a69bae; /* Light purple for accent */
+    --accent2:  #7d8792ff; /* Grey for accent */
+    --accent3: #97b197ff; /* Light pink for accent */
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', cursive;
     padding: 0;
-    background-color: #F3E6E1; /* Light pink background */
-    color: #5D4C51; /* Dark brown text */
+    background-color: var(--background); /* Light pink background */
+    color: var(--text); /* Dark brown text */
     text-align: center;
 }
+
 .section {
     padding: 50px;
 }
+
 .spacer {
     height: 75px; /* Adjust this value as needed */
+
 }
+
 #intro img {
     max-width: 100%;
     border-radius: 40%;
     padding: 30px 0;
     text-align: center;
 }
+
 header {
     margin-top: 50px;
     text-align: center;
-    background-color: #E2C4BB; /* Light brown */
-    color: #5D4C51; /* Dark brown */
+    background-color: var(--primary); /* Brown */
+    color: var(--text); /* Dark brown */
     padding: 20px 0;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     text-align: center; /* Center align the text */
 }
 
 a {
-    color: #B7928E; /* Brown for links */
+    color: var(--text); /* Grey for links */
 }
 
 a:hover {
-    color: #5D4C51; /* Dark brown on hover */
+    color: var(--primary); /* Dark brown on hover */
+}
+
+.projectOne a:hover {
+    color: var(--secondary); /* Dark brown on hover */
 }
 
 
 .project {
-    border: 2px solid #B7928E; /* Brown */
-    border-radius: 0px;
+    border: 2px solid var(--secondary); /* Grey */
+    background-color: var(--secondary);
+    border-radius: 10px;
     padding: 20px;
     text-align: left;
-
     transition: border-color 0.3s ease; /* Smooth transition effect */
     margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
 }
+
 .projectOne {
-    border: 2px solid #B7928E; /* Brown */
-    border-radius: 0px;
+    border: 2px solid var(--primary); /* Grey */
+    background-color: var(--primary);
+    border-radius: 10px;
     text-align: right;
     padding: 20px;
-
     padding-left: 10%;
     transition: border-color 0.3s ease; /* Smooth transition effect */
     margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
 }
 
-.projectOne img{
+.projectOne img {
     float: left;
-padding: 20px 0;
- 
- }
- .project img{
-     float: right;
-     padding: 20px 0;
- 
- }
- 
+    padding: 20px 0;
+}
+
+.project img {
+    float: right;
+    padding: 20px 0;
+}
+
 #album {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
@@ -93,7 +113,11 @@ padding: 20px 0;
 }
 
 .project:hover {
-    border-color: #FF69B4; /* Pink */
+    border-color: var(--accent); /* Light purple */
+}
+
+.projectOne:hover {
+    border-color: var(--accent); /* Light purple */
 }
 
 .project h3 {
@@ -105,61 +129,57 @@ padding: 20px 0;
 }
 
 footer {
-    background-color: #E2C4BB; /* Light brown */
-    color: #5D4C51; /* Dark brown */
+    background-color: var(--secondary); /* Brown */
+    color: var(--text); /* Dark brown */
     text-align: center;
     padding: 20px 0;
 }
-/* Navbar background color */
+
 .navbar {
-    background-color: #5D4C51; /* Custom color */
+    background-color: var(--secondary); /* Custom color */
     font-size: 1.5rem;
 }
-/* Navbar brand text color */
+
 .navbar-brand {
-    color: #B7928E; 
-    background-color: #5D4C51;/* Custom color */
-}
-.dropdown{
-    color:#B7928E
+    color: var(--secondary);
+    background-color: var(--secondary); /* Custom color */
 }
 
-/* Navbar toggler icon color */
+.dropdown {
+    color: var(--secondary);
+}
+
 .navbar-toggler-icon {
-    background-color: #5D4C51;/* Custom color */
-    color: #B7928E; /* Custom color */
+    background-color: var(--secondary); /* Custom color */
+    color: var(--text); /* Custom color */
 }
 
-/* Navbar link color */
 .navbar-nav .nav-link {
-    color: #B7928E; /* Custom color */
+    color: var(--text); /* Custom color */
 }
 
-/* Navbar link hover color */
 .navbar-nav .nav-link:hover {
-    color: #B7928E; /* Custom color */
+    color: var(--primary); /* Custom color */
 }
 
-/* Navbar dropdown menu background color */
 .dropdown-menu {
-    background-color: #5D4C51; /* Custom color */
-    color:#B7928E;
+    background-color: var(--secondary); /* Custom color */
+    color: var(--text);
 }
 
-/* Navbar dropdown menu link color */
 .dropdown-item {
-    color: #B7928E; /* Custom color */
+    color: var(--text); /* Custom color */
 }
 
-/* Navbar dropdown menu link hover color */
 .dropdown-item:hover {
-    color: #B7928E; /* Custom color */
+    color: var(--text); /* Custom color */
+    background-color: var(--primary); /* Custom color */
 }
 
-/* Navbar dropdown menu divider color */
 .dropdown-divider {
-    border-top-color: #D6A3B6; /* Custom color */
+    border-top-color: var(--secondary); /* Custom color */
 }
-.offcanvas-end{
-    background-color: #5D4C51;
+
+.offcanvas-end {
+    background-color: var(--secondary);
 }
