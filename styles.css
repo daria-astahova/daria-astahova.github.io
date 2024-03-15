@@ -295,3 +295,8 @@ footer {
     --bs-btn-disabled-bg: var(--primary) !important;
     --bs-btn-disabled-border-color: var(--primary) !important;
 }
+.myCarousel img{
+    height: 500px;
+    width: 100%;
+
+}
