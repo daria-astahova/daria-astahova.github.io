@@ -1,31 +1,55 @@
 :root {
-    --text: #0c0b0a; /* Dark brown for text */
-    --background: #f3e7e2; /* Light pink for background */
-    --primary: #E2C4BB; /* Brown for primary elements */
-    --secondary: #B6795F; /* Grey for secondary elements */
-    --accent: #a69bae; /* Light purple for accent */
-    --accent2:  #7d8792ff; /* Grey for accent */
-    --accent3: #97b197ff; /* Light pink for accent */
+    --text: #0c0b0a;
+    /* Dark brown for text */
+    --background: #f3e7e2;
+    /* Light pink for background */
+    --primary: #E2C4BB;
+    /* Brown for primary elements */
+    --secondary: #B6795F;
+    /* Grey for secondary elements */
+    --accent: #a69bae;
+    /* Light purple for accent */
+    --accent2: #7d8792ff;
+    /* Grey for accent */
+    --accent3: #97b197ff;
+    /* Light pink for accent */
 }
 
 
 body {
     font-family: 'Roboto', sans-serif;
     padding: 0;
-    background-color: var(--background); /* Light pink background */
-    color: var(--text); /* Dark brown text */
+    background-color: var(--background);
+    /* Light pink background */
+    color: var(--text);
+    /* Dark brown text */
     text-align: center;
-  
+
 }
-.content{
+
+.content {
     text-align: center;
 }
+
 .section {
     padding: 50px;
 }
 
 .spacer {
-    height: 75px; /* Adjust this value as needed */
+    height: 75px;
+    /* Adjust this value as needed */
+
+}
+
+.spacer2 {
+    height: 15px;
+    /* Adjust this value as needed */
+
+}
+
+.spacer3 {
+    height: 50px;
+    /* Adjust this value as needed */
 
 }
 
@@ -35,15 +59,17 @@ body {
     padding: 30px 0;
     text-align: center;
 }
-.info{
+
+.info {
     padding: 20px;
     text-align: left;
 
 }
- strong{
+
+strong {
     color: var(--secondary);
 
- }
+}
 
 
 .image-gallery {
@@ -52,9 +78,11 @@ body {
 }
 
 .image-gallery img {
-    width: 15%; /* Adjust the width as desired */
+    width: 15%;
+    /* Adjust the width as desired */
     height: auto;
-    margin-right: 10px; /* Add space between images */
+    margin-right: 10px;
+    /* Add space between images */
     animation: rotateGallery 100s infinite linear;
 }
 
@@ -62,70 +90,89 @@ body {
     0% {
         transform: translateX(0);
     }
+
     20% {
         transform: translateX(-100%);
     }
+
     40% {
         transform: translateX(-200%);
     }
+
     60% {
         transform: translateX(-300%);
     }
+
     80% {
         transform: translateX(-400%);
     }
+
     100% {
         transform: translateX(0);
     }
 }
+
 header {
     margin-top: 50px;
     text-align: center;
-    background-color: var(--primary); /* Brown */
-    color: var(--text); /* Dark brown */
+    background-color: var(--primary);
+    /* Brown */
+    color: var(--text);
+    /* Dark brown */
     padding: 20px 0;
 }
 
 header h1 {
     font-size: 3.5rem;
-    text-align: center; /* Center align the text */
+    text-align: center;
+    /* Center align the text */
 }
 
 a {
-    color: var(--text); /* Grey for links */
+    color: var(--text);
+    /* Grey for links */
 }
 
 a:hover {
-    color: var(--primary); /* Dark brown on hover */
+    color: var(--primary);
+    /* Dark brown on hover */
 }
 
 .projectOne a:hover {
-    color: var(--secondary); /* Dark brown on hover */
+    color: var(--secondary);
+    /* Dark brown on hover */
 }
 
-.projects{
-   margin-left: 10%;
+.projects {
+    margin-left: 10%;
     margin-right: 10%;
 }
+
 .project {
-    border: 2px solid var(--secondary); /* Grey */
+    border: 2px solid var(--secondary);
+    /* Grey */
     background-color: var(--secondary);
     border-radius: 10px;
     padding: 20px;
     text-align: left;
-    transition: border-color 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    margin-bottom: 20px;
+    /* Increase the margin-bottom value to add space between rows */
 }
 
 .projectOne {
-    border: 2px solid var(--primary); /* Grey */
+    border: 2px solid var(--primary);
+    /* Grey */
     background-color: var(--primary);
     border-radius: 10px;
     text-align: right;
     padding: 20px;
     padding-left: 10%;
-    transition: border-color 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    margin-bottom: 20px;
+    /* Increase the margin-bottom value to add space between rows */
 }
 
 .projectOne img {
@@ -140,8 +187,10 @@ a:hover {
 
 #album {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
-    gap: 20px; /* Adjust the gap between images */
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjust the number of columns as needed */
+    gap: 20px;
+    /* Adjust the gap between images */
 }
 
 #album img {
@@ -151,68 +200,87 @@ a:hover {
 }
 
 .one {
-    border: 2px solid var(--secondary); /* Grey */
+    border: 2px solid var(--secondary);
+    /* Grey */
     background-color: var(--secondary);
     border-radius: 10px;
     padding: 20px;
-    text-align: left;
-    transition: border-color 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+    text-align: center;
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    margin-bottom: 20px;
+    /* Increase the margin-bottom value to add space between rows */
 }
 
 .two {
-    border: 2px solid var(--background); /* Grey */
+    border: 2px solid var(--background);
+    /* Grey */
     background-color: var(--background);
     border-radius: 10px;
     padding: 20px;
-    text-align: right;
-    transition: border-color 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+    text-align: center;
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    margin-bottom: 20px;
+    /* Increase the margin-bottom value to add space between rows */
 }
-.two .text-bg-primary{
+
+.two .text-bg-primary {
     background-color: var(--primary) !important;
     color: var(--text);
-    }
-.two .btn-primary{
+}
+
+.two .btn-primary {
     background-color: var(--primary);
     border-color: var(--primary);
     color: var(--text);
-    
+
 }
-.three{
-    border: 2px solid var(--primary); /* Grey */
+
+.three {
+    border: 2px solid var(--primary);
+    /* Grey */
     background-color: var(--primary);
     border-radius: 10px;
     padding: 20px;
-    text-align: left;
-    transition: border-color 0.3s ease; /* Smooth transition effect */
-    margin-bottom: 20px; /* Increase the margin-bottom value to add space between rows */
+    text-align: center;
+    transition: border-color 0.3s ease;
+    /* Smooth transition effect */
+    margin-bottom: 20px;
+    /* Increase the margin-bottom value to add space between rows */
 }
-.three .btn-primary{
+
+.three .btn-primary {
     background-color: var(--background);
     border-color: var(--background);
     color: var(--text);
-    
+    text-align: center;
+
 }
-.three .text-bg-primary{
+
+.three .text-bg-primary {
     background-color: var(--background) !important;
     color: var(--text);
-    }
-#character-buttons{
+}
+
+#character-buttons {
     display: flex;
     justify-content: center;
     text-align: center;
     gap: 10px;
     padding: 20px;
-    color:var(--text);
+    color: var(--text);
 
 }
+
 .projecst:hover {
-    border-color: var(--accent); /* Light purple */
+    border-color: var(--accent);
+    /* Light purple */
 }
 
 .projectsOne:hover {
-    border-color: var(--accent); /* Light purple */
+    border-color: var(--accent);
+    /* Light purple */
 }
 
 .projects h3 {
@@ -224,20 +292,24 @@ a:hover {
 }
 
 footer {
-    background-color: var(--secondary); /* Brown */
-    color: var(--text); /* Dark brown */
+    background-color: var(--secondary);
+    /* Brown */
+    color: var(--text);
+    /* Dark brown */
     text-align: center;
     padding: 20px 0;
 }
 
 .navbar {
-    background-color: var(--secondary); /* Custom color */
+    background-color: var(--secondary);
+    /* Custom color */
     font-size: 1.5rem;
 }
 
 .navbar-brand {
     color: var(--secondary);
-    background-color: var(--secondary); /* Custom color */
+    background-color: var(--secondary);
+    /* Custom color */
 }
 
 .dropdown {
@@ -245,34 +317,43 @@ footer {
 }
 
 .navbar-toggler-icon {
-    background-color: var(--secondary); /* Custom color */
-    color: var(--text); /* Custom color */
+    background-color: var(--secondary);
+    /* Custom color */
+    color: var(--text);
+    /* Custom color */
 }
 
-.navbar-nav .nav-link  {
-    color: var(--text); /* Custom color */
+.navbar-nav .nav-link {
+    color: var(--text);
+    /* Custom color */
 }
 
 .navbar-nav .nav-link:hover {
-    color: var(--primary); /* Custom color */
+    color: var(--primary);
+    /* Custom color */
 }
 
 .dropdown-menu {
-    background-color: var(--secondary); /* Custom color */
+    background-color: var(--secondary);
+    /* Custom color */
     color: var(--text);
 }
 
 .dropdown-item {
-    color: var(--text); /* Custom color */
+    color: var(--text);
+    /* Custom color */
 }
 
 .dropdown-item:hover {
-    color: var(--text); /* Custom color */
-    background-color: var(--primary); /* Custom color */
+    color: var(--text);
+    /* Custom color */
+    background-color: var(--primary);
+    /* Custom color */
 }
 
 .dropdown-divider {
-    border-top-color: var(--secondary); /* Custom color */
+    border-top-color: var(--secondary);
+    /* Custom color */
 }
 
 .offcanvas-end {
@@ -295,7 +376,8 @@ footer {
     --bs-btn-disabled-bg: var(--primary) !important;
     --bs-btn-disabled-border-color: var(--primary) !important;
 }
-.myCarousel img{
+
+.myCarousel img {
     height: 500px;
     width: 100%;
 
