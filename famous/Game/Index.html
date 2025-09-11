@@ -1,0 +1,16 @@
+<!DOCTYPE html><html>
+<head><title>Game Controller</title></head>
+<body>
+    <h1>Join Game</h1>
+    <input type="text" id="nameInput" placeholder="Your Name">
+    <input type="text" id="roomInput" placeholder="Room Code">
+    <button onclick="joinGame()">Join Game</button>
+
+    <div id="gameControls" style="display:none;">
+        <input type="text" id="answerInput" placeholder="Your Answer">
+        <button onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/photon-realtime-js@v5.0.0-beta.5/build/photon-realtime.js"></script>
+    <script src="main.js"></script> </body>
+</html>
