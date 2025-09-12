@@ -54,10 +54,10 @@ var DemoLoadBalancing = /** @class */ (function (_super) {
             }
             if (DemoNameServer) {
                 this.setNameServerAddress(DemoNameServer);
-                this.connectToRegionMaster(DemoRegion || "EU");
+                this.connectToRegionMaster(DemoRegion || "usw");
             }
             else {
-                this.connectToRegionMaster(DemoRegion || "EU");
+                this.connectToRegionMaster(DemoRegion || "usw");
                 //this.connectToNameServer({ region: "EU", lobbyType: Photon.LoadBalancing.Constants.LobbyType.Default });
             }
         }

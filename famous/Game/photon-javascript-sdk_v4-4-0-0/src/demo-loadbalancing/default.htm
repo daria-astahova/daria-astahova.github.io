@@ -18,7 +18,7 @@
                     if (response.status === "connected") {
                         demo.setCustomAuthentication("token=" + response.authResponse.accessToken);
                         demo.output("Got fb token. Setting custom fb authentication.");
-                        demo.connectToRegionMaster("EU");
+                        demo.connectToRegionMaster("usw");
                     }
                 });
             };
