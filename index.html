@@ -5,58 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daria Brown</title>
 
-  <!-- Optional: keep Bootstrap if you want the grid/utilities -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Your custom styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
   <header class="topbar">
     <nav class="topnav" aria-label="Primary">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <!-- <a href="#awards">Awards</a>
-      <a href="#testimonials">Testimonials</a> -->
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h1 class="hero-title">DARIA BROWN</h1>
-    <p class="hero-subtitle">Aspiring Game Developer</p>
+  <section class="name">
+    <h1 class="name-title">DARIA BROWN</h1>
+    <p class="name-subtitle"> Game Developer</p>
   </section>
-  <section class="stage" aria-label="Featured media">
 
-    <!-- SIDE SOCIALS (unchanged) -->
-    <div class="stage-socials-side">
-      <a href="https://behance.net/YOUR_HANDLE" target="_blank">Behance</a>
+  <section class="stage" aria-label="Featured media">
+    <div class="stage-socials-side" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/dariabrown/" target="_blank" rel="noreferrer">LINKEDIN</a>
       <span></span>
-      <a href="https://dribbble.com/YOUR_HANDLE" target="_blank">Dribbble</a>
+      <a href="https://github.com/daria-astahova" target="_blank" rel="noreferrer">GITHUB</a>
       <span></span>
-      <a href="https://youtube.com/@YOUR_HANDLE" target="_blank">YouTube</a>
+      <a href="https://www.youtube.com/@AstahovaGames" target="_blank" rel="noreferrer">YouTube</a>
     </div>
-  
+
     <div class="stage-inner">
-      <a class="stage-link" href="https://youtube.com/@YOUR_HANDLE" target="_blank" rel="noreferrer">
+      <a class="stage-link" href="https://www.youtube.com/watch?v=OHRScPK0oI8" target="_blank" rel="noreferrer">
         <div class="stage-bg"></div>
-  
-        <img
-          class="stage-poster"
-          src="images/IMG_7033.jpg"
-          alt="Featured reel"
-        >
+        <img class="stage-poster" src="images/IMG_7033.jpg" alt="Featured reel">
       </a>
     </div>
-  
   </section>
-  
-  
-  <!-- Content sections (your existing info can live here) -->
-  <main class="page">
 
+  <main class="page">
     <section id="about" class="block">
       <h2>About</h2>
       <p>
@@ -64,48 +48,47 @@
         Interactive Media, and Mobile Technology, and minors in both Visual Arts and Dance...
       </p>
     </section>
+
     <section id="projects" class="block">
-        <div class="vip-badge">★ Featured Work</div>
-        <h2>Projects</h2>
-      
-        <div class="polaroid-grid">
-      
-          <a class="polaroid" href="famous/Game/Index.html" target="_blank" rel="noreferrer">
-            <div class="polaroid-photo">
-              <img src="images/IMG_7033.jpg" alt="Let’s Get Famous preview" loading="lazy">
-            </div>
-            <div class="polaroid-meta">
-              <h3>Let’s Get Famous</h3>
-              <p>Unity • Multiplayer • Card system</p>
-            </div>
-            <span class="polaroid-tag">VIP</span>
-          </a>
-      
-          <a class="polaroid" href="comic.html" target="_blank" rel="noreferrer">
-            <div class="polaroid-photo">
-              <img src="images/IMG_7033.jpg" alt="Interactive Comic Book preview" loading="lazy">
-            </div>
-            <div class="polaroid-meta">
-              <h3>Interactive Comic Book</h3>
-              <p>Unity • AR • Storytelling</p>
-            </div>
-            <span class="polaroid-tag">NEW</span>
-          </a>
-      
-          <a class="polaroid" href="ball.html" target="_blank" rel="noreferrer">
-            <div class="polaroid-photo">
-              <img src="images/IMG_7033.jpg" alt="Ball to the Wall preview" loading="lazy">
-            </div>
-            <div class="polaroid-meta">
-              <h3>Ball to the Wall</h3>
-              <p>HTML • CSS • JavaScript</p>
-            </div>
-            <span class="polaroid-tag">PLAY</span>
-          </a>
-      
-        </div>
-      </section>
-      
+      <div class="vip-badge">★ Featured Work</div>
+      <h2>Projects</h2>
+
+      <div class="polaroid-grid">
+        <a class="polaroid" href="famous/Game/Index.html" target="_blank" rel="noreferrer">
+          <div class="polaroid-photo">
+            <img src="images/IMG_7033.jpg" alt="Let’s Get Famous preview" loading="lazy">
+          </div>
+          <div class="polaroid-meta">
+            <h3>Let’s Get Famous</h3>
+            <p>Unity • Multiplayer • Card system</p>
+          </div>
+          <span class="polaroid-tag">VIP</span>
+        </a>
+
+        <a class="polaroid" href="comic.html" target="_blank" rel="noreferrer">
+          <div class="polaroid-photo">
+            <img src="images/IMG_7033.jpg" alt="Interactive Comic Book preview" loading="lazy">
+          </div>
+          <div class="polaroid-meta">
+            <h3>Interactive Comic Book</h3>
+            <p>Unity • AR • Storytelling</p>
+          </div>
+          <span class="polaroid-tag">NEW</span>
+        </a>
+
+        <a class="polaroid" href="ball.html" target="_blank" rel="noreferrer">
+          <div class="polaroid-photo">
+            <img src="images/IMG_7033.jpg" alt="Ball to the Wall preview" loading="lazy">
+          </div>
+          <div class="polaroid-meta">
+            <h3>Ball to the Wall</h3>
+            <p>HTML • CSS • JavaScript</p>
+          </div>
+          <span class="polaroid-tag">PLAY</span>
+        </a>
+      </div>
+    </section>
+
     <section id="contact" class="block">
       <h2>Contact</h2>
       <ul class="contact-list">
@@ -114,7 +97,6 @@
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dariabrown" target="_blank" rel="noreferrer">/in/dariabrown</a></li>
       </ul>
     </section>
-
   </main>
 
   <footer class="footer">
@@ -124,23 +106,21 @@
   <script>
     (function () {
       const cards = document.querySelectorAll(".polaroid");
-  
+
       cards.forEach((card) => {
         let raf = null;
-  
+
         function setTilt(clientX, clientY) {
           const r = card.getBoundingClientRect();
           const x = clientX - r.left;
           const y = clientY - r.top;
-  
-          // -1..1 ranges
+
           const px = (x / r.width) * 2 - 1;
           const py = (y / r.height) * 2 - 1;
-  
-          // tilt strength
-          const tiltX = (-py * 8).toFixed(2); // rotateX
-          const tiltY = (px * 10).toFixed(2); // rotateY
-  
+
+          const tiltX = (-py * 8).toFixed(2);
+          const tiltY = (px * 10).toFixed(2);
+
           card.style.transform = `
             perspective(900px)
             rotateX(${tiltX}deg)
@@ -148,30 +128,27 @@
             translateY(-6px)
           `;
         }
-  
+
         function onMove(e) {
           const point = e.touches ? e.touches[0] : e;
           if (!point) return;
-  
+
           if (raf) cancelAnimationFrame(raf);
           raf = requestAnimationFrame(() => setTilt(point.clientX, point.clientY));
         }
-  
+
         function reset() {
           if (raf) cancelAnimationFrame(raf);
           card.style.transform = "";
         }
-  
+
         card.addEventListener("mousemove", onMove);
         card.addEventListener("mouseleave", reset);
-  
-        // touch: tilt while finger is down, reset on release
         card.addEventListener("touchstart", onMove, { passive: true });
         card.addEventListener("touchmove", onMove, { passive: true });
         card.addEventListener("touchend", reset);
       });
     })();
   </script>
-  
 </body>
 </html>
