@@ -1,619 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daria Brown</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daria Brown</title>
+
+  <!-- Optional: keep Bootstrap if you want the grid/utilities -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="container" id="intro">
-            <div class="spacer"></div>
-            <h1>Daria Brown</h1>
-            <p>Aspiring Game Developer</p>
-            <link rel="stylesheet" href="styles.css">
-            <img src="images/1698703211743.jpg" alt="Daria Brown's Picture" width="auto" height="300px">
-            <div class="spacer"></div>
-            <div class="spacer"></div>
-        </div>
+  <header class="topbar">
+    <nav class="topnav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <!-- <a href="#awards">Awards</a>
+      <a href="#testimonials">Testimonials</a> -->
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    </header>
-    <nav class="navbar fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" data-bs-auto-close="false">
-                                Projects
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#game-design">Game Design</a></li>
-                                <li><a class="dropdown-item" href="#web-design">Web Design</a></li>
-                                <li><a class="dropdown-item" href="#film">Film</a></li>
-                                <li><a class="dropdown-item" href="#illustrations">Illustrations</a></li>
-                                <li><a class="dropdown-item" href="#3d-rendering">3D Rendering</a></li>
-                                <li><a class="dropdown-item" href="#extras">Extras</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" data-bs-auto-close="false">
-                                Education
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#gimm">GIMM</a></li>
-                                <li><a class="dropdown-item" href="#arts">Visual Arts</a></li>
-                                <li><a class="dropdown-item" href="#dance">Dance</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav><div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-        </div>
-        <div class="carousel-inner">
-            <!-- Slide 1: Daria's Introduction -->
-            <div class="carousel-item active">
-                <img src="images/IMG_7033.jpg" class="d-block w-100" alt="Daria Brown's Picture" loading="lazy"> 
-                <!-- Addded a lazy loading to help it spee up https://www.webpagetest.org/result/240501_AiDc6H_CFM/2/experiments/#Usable -->
-                <div class="carousel-caption text-start">
-                    <h1>Daria Brown</h1>
-                    <p>Aspiring Game Developer</p>
-                    <p><a class="btn btn-lg btn-primary" href="#about">Learn More</a></p>
-                </div>
-            </div>
-            <!-- Slide 2: Daria's Education -->
-            <div class="carousel-item">
-                <img src="images/IMG_7033.jpg" class="d-block w-100" alt="Daria's Education">
-                <div class="carousel-caption">
-                    <h1>Education</h1>
-                    <p>Daria is pursuing a Bachelor of Science degree in Games, Interactive Media, and Mobile Technology at Boise State University.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#education">Learn More</a></p>
-                </div>
-            </div>
-            <!-- Slide 3: Daria's Projects -->
-            <div class="carousel-item">
-                <img src="images/IMG_7033.jpg" class="d-block w-100" alt="Daria's Projects">
-                <div class="carousel-caption text-end">
-                    <h1>Projects</h1>
-                    <p>Daria has worked on various projects including game development, web design, and film production.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#projects">Learn More</a></p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+  <section class="hero">
+    <h1 class="hero-title">DARIA BROWN</h1>
+    <p class="hero-subtitle">Aspiring Game Developer</p>
+  </section>
+  <section class="stage" aria-label="Featured media">
+
+    <!-- SIDE SOCIALS (unchanged) -->
+    <div class="stage-socials-side">
+      <a href="https://behance.net/YOUR_HANDLE" target="_blank">Behance</a>
+      <span></span>
+      <a href="https://dribbble.com/YOUR_HANDLE" target="_blank">Dribbble</a>
+      <span></span>
+      <a href="https://youtube.com/@YOUR_HANDLE" target="_blank">YouTube</a>
     </div>
-    
-    
-
-
-
-    <div class="content">
-        <section id="about" class="section">
-            <div class="spacer"></div>
-            <div class="container">
-                <h2>About Daria Brown</h2>
-                <p>Daria Brown is a student at Boise State University pursuing a Bachelor of Science degree in Games,
-                    Interactive Media, and Mobile Technology, and minors in both Visual Arts and Dance. Daria's primary
-                    passions are game design and animation, and she aspires to merge both disciplines into a fulfilling
-                    career. Motivated by a strong work ethic, creativity, and adept problem-solving skills, Daria is
-                    committed to continuous learning and growth. This website serves as a showcase of Daria's
-                    achievements and endeavors throughout her three-year journey at Boise State University.</p>
-                <!-- Add Daria Brown's picture here -->
-            </div>
-        </section>
-
+  
+    <div class="stage-inner">
+      <a class="stage-link" href="https://youtube.com/@YOUR_HANDLE" target="_blank" rel="noreferrer">
+        <div class="stage-bg"></div>
+  
+        <img
+          class="stage-poster"
+          src="images/IMG_7033.jpg"
+          alt="Featured reel"
+        >
+      </a>
     </div>
+  
+  </section>
+  
+  
+  <!-- Content sections (your existing info can live here) -->
+  <main class="page">
 
-    <section id="projects">
-        <link rel="stylesheet" href="styles.css">
-        <div>
-            <div class="spacer"></div>
-            <h1><strong>Projects</strong></h1>
-
-            <!-- Game Design -->
-            <section id="game-design">
-                <div class="spacer"></div>
-
-                <h3><strong>Game Design</strong></h3>
-                <div class="spacer"></div>
-
-                <!-- Let's Get Famous -->
-
-                <div class="row">
-                    <div class="spacer"></div>
-                    <section>
-                        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 two">
-                            <div class="col d-flex flex-column align-items-md-center gap-2">
-                                <h2 class="fw-bold text-body-emphasis">Let's Get Famous</h2>
-                                <p class="text-body-secondary"></p>
-                                <a href="famous/Game/Index.html" target="_blank" class="btn btn-primary btn-lg">Check it
-                                    Out!</a>
-                            </div>
-
-                            <div class="col">
-                                <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#collection"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                        <p class="text-body-secondary">Spring 2024 - Present</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                        <p class="text-body-secondary">Developing a game based on a friend's board game,
-                                            "Get Famous," using Unity. Features multiplayer functionality and
-                                            challenges.</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#speedometer"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                        <p class="text-body-secondary">Game design principles<br>Multiplayer game
-                                            development<br>Card system implementation</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#table"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                        <p class="text-body-secondary">Unity game engine<br>C# programming
-                                            language<br>Multiplayer networking libraries</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="spacer"></div>
-                    <section>
-                        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 three">
-                            <div class="col">
-                                <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#collection"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                        <p class="text-body-secondary">Spring 2022</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#gear-fill"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                        <p class="text-body-secondary">Collaboratively created an interactive comic book
-                                            using Unity, blending augmented reality (AR) and traditional storytelling.
-                                        </p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#speedometer"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                        <p class="text-body-secondary">Basic game development concepts<br>Unity game
-                                            engine fundamentals<br>Game asset integration</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#table"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                        <p class="text-body-secondary">Unity game engine<br>C# programming
-                                            language<br>Game asset creation tools (if any)</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col d-flex flex-column align-items-md-center gap-2">
-                                <h2 class="fw-bold text-body-emphasis">Interactive Comic Book</h2>
-                                <p class="text-body-secondary"></p>
-                                <a href="comic.html" target="_blank" class="btn btn-primary btn-lg">Check it Out!</a>
-                            </div>
-                        </div>
-                    </section>
-                    <div class="spacer"></div>
-                    <section>
-                        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 two">
-                            <div class="col d-flex flex-column align-items-md-center gap-2">
-                                <h2 class="fw-bold text-body-emphasis">Individual Game</h2>
-                                <p class="text-body-secondary"></p>
-                                <a href="individual.html" target="_blank" class="btn btn-primary btn-lg">Check it
-                                    Out!</a>
-                            </div>
-
-                            <div class="col">
-                                <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#collection"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                        <p class="text-body-secondary">Fall 2021</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#gear-fill"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                        <p class="text-body-secondary">Initial game development project showcasing
-                                            progress and fundamental Unity development concepts.</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#speedometer"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                        <p class="text-body-secondary">Basic game development concepts<br>Unity game
-                                            engine fundamentals<br>Game asset integration</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div
-                                            class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#table"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                        <p class="text-body-secondary">Unity game engine<br>C# programming
-                                            language<br>Game asset creation tools (if any)</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="spacer"></div>
-                    <section>
-                        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 three">
-                            <div class="col">
-                                <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#collection"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                        <p class="text-body-secondary">Spring 2024</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#gear-fill"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                        <p class="text-body-secondary">Developed a web-based game inspired by Tic Tac Toe with other students. Translated concept into a playable online version.</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#speedometer"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                        <p class="text-body-secondary">Web-based game development<br>Frontend and backend integration<br>Collaborative game design</p>
-                                    </div>
-
-                                    <div class="col d-flex flex-column gap-2">
-                                        <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                            <svg class="bi" width="1em" height="1em">
-                                                <use xlink:href="#table"></use>
-                                            </svg>
-                                        </div>
-                                        <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                        <p class="text-body-secondary">HTML, CSS, JavaScript<br>Web development frameworks (if any)<br>Version control systems (e.g., Git)</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col d-flex flex-column align-items-md-center gap-2">
-                                <h2 class="fw-bold text-body-emphasis">Ball to the Wall</h2>
-                                <p class="text-body-secondary"></p>
-                                   <a href="ball.html" target="_blank" class="btn btn-primary btn-lg">Check it Out!</a>
-                            </div>
-                        </div>
-                    </section>
-            </section>
-
-            <!-- Web Design -->
-            <section id="web-design">
-                <div class="spacer"></div>
-                <h3><strong>Web Design</strong></h3>
-                <div class="spacer"></div>
-
-                <section>
-                    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 two">
-                        <div class="col d-flex flex-column align-items-md-center gap-2">
-                            <h2 class="fw-bold text-body-emphasis">Group Photos Data - MOBILE NARRATIVE GAME</h2>
-                            <p class="text-body-secondary"></p>
-                            <a href="group.html" target="_blank" class="btn btn-primary btn-lg">Check it Out!</a>
-                        </div>
-
-                        <div class="col">
-                            <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                <div class="col d-flex flex-column gap-2">
-                                    <div
-                                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#collection"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                    <p class="text-body-secondary">Fall 2023</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div
-                                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#gear-fill"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                    <p class="text-body-secondary">Creation of a website incorporating 100 photos from a
-                                        friend group, focusing on web development skills.</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div
-                                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#speedometer"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                    <p class="text-body-secondary">Web development<br>HTML, CSS, JavaScript<br>User
-                                        interface design</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div
-                                        class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#table"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                    <p class="text-body-secondary">HTML, CSS, JavaScript<br>Web development frameworks
-                                        (if any)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <div class="spacer"></div>
-                <section>
-                    <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 three">
-                        <div class="col">
-                            <div class="row row-cols-1 row-cols-sm-2 g-4">
-                                <div class="col d-flex flex-column gap-2">
-                                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#collection"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                    <p class="text-body-secondary">Spring 2024</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#gear-fill"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                    <p class="text-body-secondary">Developed a web-based game inspired by Tic Tac Toe with other students. Translated concept into a playable online version.</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#speedometer"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                    <p class="text-body-secondary">Web-based game development<br>Frontend and backend integration<br>Collaborative game design</p>
-                                </div>
-
-                                <div class="col d-flex flex-column gap-2">
-                                    <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                        <svg class="bi" width="1em" height="1em">
-                                            <use xlink:href="#table"></use>
-                                        </svg>
-                                    </div>
-                                    <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                    <p class="text-body-secondary">HTML, CSS, JavaScript<br>Web development frameworks (if any)<br>Version control systems (e.g., Git)</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col d-flex flex-column align-items-md-center gap-2">
-                            <h2 class="fw-bold text-body-emphasis">Ball to the Wall</h2>
-                            <p class="text-body-secondary"></p>
-                            <a href="ball.html" target="_blank" class="btn btn-primary btn-lg">Check it Out!</a>
-                        </div>
-                    </div>
-                </section>
-                </section>
-
-
-                <!-- Film -->
-                <section id="film">
-                    <div class="spacer"></div>
-                    <h3><strong>Film</strong></h3>
-            <div class="spacer"></div>
+    <section id="about" class="block">
+      <h2>About</h2>
+      <p>
+        Daria Brown is a student at Boise State University pursuing a Bachelor of Science degree in Games,
+        Interactive Media, and Mobile Technology, and minors in both Visual Arts and Dance...
+      </p>
+    </section>
+    <section id="projects" class="block">
+        <div class="vip-badge">★ Featured Work</div>
+        <h2>Projects</h2>
       
-            <section>
-                <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5 two">
-                    <div class="col d-flex flex-column align-items-md-center gap-2">
-                        <h2 class="fw-bold text-body-emphasis">Scene From Silver Linings Playbook - Directed by Doug Campbell</h2>
-                        <p class="text-body-secondary"></p><a href="film1.html" target="_blank" class="btn btn-primary btn-lg">Check it Out!</a>
-                    </div>
-
-                    <div class="col">
-                        <div class="row row-cols-1 row-cols-sm-2 g-4">
-                            <div class="col d-flex flex-column gap-2">
-                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                    <svg class="bi" width="1em" height="1em">
-                                        <use xlink:href="#collection"></use>
-                                    </svg>
-                                </div>
-                                <h4 class="fw-semibold mb-0 text-body-emphasis">Duration</h4>
-                                <p class="text-body-secondary">Spring 2024</p>
-                            </div>
-
-                            <div class="col d-flex flex-column gap-2">
-                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                    <svg class="bi" width="1em" height="1em">
-                                        <use xlink:href="#gear-fill"></use>
-                                    </svg>
-                                </div>
-                                <h4 class="fw-semibold mb-0 text-body-emphasis">Description</h4>
-                                <p class="text-body-secondary">Participation in FILM 494 project involving crafting scenes from various films under the direction of Doug Campbell. Includes personal project acting alongside co-star and video editing using Premiere Pro.</p>
-                            </div>
-
-                            <div class="col d-flex flex-column gap-2">
-                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                    <svg class="bi" width="1em" height="1em">
-                                        <use xlink:href="#speedometer"></use>
-                                    </svg>
-                                </div>
-                                <h4 class="fw-semibold mb-0 text-body-emphasis">Skills Learned:</h4>
-                                <p class="text-body-secondary">Film production process<br>Acting and directing techniques<br>Video editing and post-production</p>
-                            </div>
-
-                            <div class="col d-flex flex-column gap-2">
-                                <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-4 rounded-3">
-                                    <svg class="bi" width="1em" height="1em">
-                                        <use xlink:href="#table"></use>
-                                    </svg>
-                                </div>
-                                <h4 class="fw-semibold mb-0 text-body-emphasis">Tools/Technologies Used:</h4>
-                                <p class="text-body-secondary">Film production equipment<br>Adobe Premiere Pro (for video editing)<br>Collaboration and communication tools (during film production)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    </section>
-
-<div id="education"></div>
-<div id="gimm"></div>
-<div id="arts"></div>
-<div id="dance"></div>
-
-    <section id="contact" class="section">
-        <div class="spacer"></div>
-        <div class="container">
-            <h2>Contact Daria Brown</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:amandabrown463@u.boisestate.edu">amandabrown463@u.boisestate.edu</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/daria-astahova" target="_blank">Daria Brown</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dariabrown" target="_blank">Daria Brown</a></p>
-
-
-                <!-- Add more contact information here -->
+        <div class="polaroid-grid">
+      
+          <a class="polaroid" href="famous/Game/Index.html" target="_blank" rel="noreferrer">
+            <div class="polaroid-photo">
+              <img src="images/IMG_7033.jpg" alt="Let’s Get Famous preview" loading="lazy">
             </div>
+            <div class="polaroid-meta">
+              <h3>Let’s Get Famous</h3>
+              <p>Unity • Multiplayer • Card system</p>
+            </div>
+            <span class="polaroid-tag">VIP</span>
+          </a>
+      
+          <a class="polaroid" href="comic.html" target="_blank" rel="noreferrer">
+            <div class="polaroid-photo">
+              <img src="images/IMG_7033.jpg" alt="Interactive Comic Book preview" loading="lazy">
+            </div>
+            <div class="polaroid-meta">
+              <h3>Interactive Comic Book</h3>
+              <p>Unity • AR • Storytelling</p>
+            </div>
+            <span class="polaroid-tag">NEW</span>
+          </a>
+      
+          <a class="polaroid" href="ball.html" target="_blank" rel="noreferrer">
+            <div class="polaroid-photo">
+              <img src="images/IMG_7033.jpg" alt="Ball to the Wall preview" loading="lazy">
+            </div>
+            <div class="polaroid-meta">
+              <h3>Ball to the Wall</h3>
+              <p>HTML • CSS • JavaScript</p>
+            </div>
+            <span class="polaroid-tag">PLAY</span>
+          </a>
+      
         </div>
+      </section>
+      
+    <section id="contact" class="block">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:amandabrown463@u.boisestate.edu">amandabrown463@u.boisestate.edu</a></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/daria-astahova" target="_blank" rel="noreferrer">daria-astahova</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dariabrown" target="_blank" rel="noreferrer">/in/dariabrown</a></li>
+      </ul>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Daria Brown</p>
-        </div>
-    </footer>
+  </main>
 
+  <footer class="footer">
+    <p>© 2024 Daria Brown</p>
+  </footer>
+
+  <script>
+    (function () {
+      const cards = document.querySelectorAll(".polaroid");
+  
+      cards.forEach((card) => {
+        let raf = null;
+  
+        function setTilt(clientX, clientY) {
+          const r = card.getBoundingClientRect();
+          const x = clientX - r.left;
+          const y = clientY - r.top;
+  
+          // -1..1 ranges
+          const px = (x / r.width) * 2 - 1;
+          const py = (y / r.height) * 2 - 1;
+  
+          // tilt strength
+          const tiltX = (-py * 8).toFixed(2); // rotateX
+          const tiltY = (px * 10).toFixed(2); // rotateY
+  
+          card.style.transform = `
+            perspective(900px)
+            rotateX(${tiltX}deg)
+            rotateY(${tiltY}deg)
+            translateY(-6px)
+          `;
+        }
+  
+        function onMove(e) {
+          const point = e.touches ? e.touches[0] : e;
+          if (!point) return;
+  
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => setTilt(point.clientX, point.clientY));
+        }
+  
+        function reset() {
+          if (raf) cancelAnimationFrame(raf);
+          card.style.transform = "";
+        }
+  
+        card.addEventListener("mousemove", onMove);
+        card.addEventListener("mouseleave", reset);
+  
+        // touch: tilt while finger is down, reset on release
+        card.addEventListener("touchstart", onMove, { passive: true });
+        card.addEventListener("touchmove", onMove, { passive: true });
+        card.addEventListener("touchend", reset);
+      });
+    })();
+  </script>
+  
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-
-
 </html>
