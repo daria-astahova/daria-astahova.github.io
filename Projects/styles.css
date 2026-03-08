@@ -243,5 +243,129 @@ a:hover{ color:var(--primary); }
     border-radius:22px;
   }
 }
+.carousel{
+  position:relative;
+  margin-top:24px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px 18px 56px;
+  overflow:hidden;
+}
+
+.carousel-track-container{
+  overflow:hidden;
+  border-radius:18px;
+}
+
+.carousel-track{
+  display:flex;
+  transition:transform .45s ease;
+  will-change:transform;
+}
+
+.carousel-slide{
+  min-width:100%;
+  flex:0 0 100%;
+}
+
+.carousel-slide img{
+  width:100%;
+  height:clamp(260px, 42vw, 560px);
+  object-fit:cover;
+  display:block;
+  border-radius:18px;
+  background:#ddd;
+}
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:46px;
+  height:46px;
+  border:none;
+  border-radius:999px;
+  background:color-mix(in srgb, var(--background) 82%, white 18%);
+  color:var(--text);
+  box-shadow:0 10px 24px rgba(26,21,18,.16);
+  cursor:pointer;
+  font-size:22px;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  transition:transform .2s ease, background .2s ease, opacity .2s ease;
+  z-index:3;
+}
+
+.carousel-btn:hover{
+  background:var(--secondary);
+  transform:translateY(-50%) scale(1.04);
+}
+
+.carousel-btn.prev{
+  left:24px;
+}
+
+.carousel-btn.next{
+  right:24px;
+}
+
+.carousel-dots{
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+}
+
+.dot{
+  width:11px;
+  height:11px;
+  border:none;
+  border-radius:999px;
+  background:color-mix(in srgb, var(--muted) 35%, white 65%);
+  cursor:pointer;
+  padding:0;
+  transition:transform .2s ease, background .2s ease;
+}
+
+.dot:hover{
+  transform:scale(1.1);
+  background:var(--primary);
+}
+
+.dot.active{
+  background:var(--accent);
+  transform:scale(1.15);
+}
+
+@media (max-width: 640px){
+  .carousel{
+    padding:14px 14px 50px;
+  }
+
+  .carousel-btn{
+    width:40px;
+    height:40px;
+    font-size:18px;
+  }
+
+  .carousel-btn.prev{
+    left:14px;
+  }
+
+  .carousel-btn.next{
+    right:14px;
+  }
+
+  .carousel-slide img{
+    height:260px;
+  }
+}
 
 
