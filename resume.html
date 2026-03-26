@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daria Brown | Resume</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .resume-page{
+      width:min(1150px,92vw);
+      margin:0 auto;
+      padding:38px 0 72px;
+    }
+
+    .resume-hero{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
+      margin-top:20px;
+    }
+
+    .resume-card,
+    .resume-side-card,
+    .resume-section{
+      background:rgba(255,255,255,.82);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+
+    .resume-card{
+      padding:34px;
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .resume-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -80px -90px auto;
+      width:240px;
+      height:240px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(216,167,181,.22), transparent 68%);
+      pointer-events:none;
+    }
+
+    .resume-kicker,
+    .section-kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:color-mix(in srgb, var(--accent) 18%, white 82%);
+      border:1px solid color-mix(in srgb, var(--accent) 40%, white 60%);
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      font-size:11px;
+      margin-bottom:16px;
+    }
+
+    .resume-name{
+      margin:0;
+      font-size:clamp(2.2rem,4vw,4rem);
+      line-height:.95;
+      letter-spacing:-.05em;
+      text-transform:uppercase;
+    }
+
+    .resume-role{
+      margin:12px 0 0;
+      font-size:1.05rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .resume-summary{
+      margin:22px 0 0;
+      max-width:62ch;
+      line-height:1.75;
+      color:var(--text);
+    }
+
+    .resume-cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:26px;
+    }
+
+    .resume-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:44px;
+      padding:11px 16px;
+      border-radius:999px;
+      text-decoration:none;
+      color:var(--text);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.72);
+      font-size:.94rem;
+      transition:transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .resume-pill:hover{
+      transform:translateY(-2px);
+      box-shadow:0 14px 28px rgba(26,21,18,.12);
+      border-color:color-mix(in srgb, var(--accent) 50%, var(--line) 50%);
+    }
+
+    .resume-side-card{
+      padding:26px;
+      text-align:left;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .mini-list,
+    .chip-list,
+    .contact-stack{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .side-label{
+      margin:0 0 8px;
+      font-size:.86rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .contact-stack a,
+    .mini-list a{
+      color:var(--text);
+      text-decoration:none;
+      word-break:break-word;
+    }
+
+    .chip-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      padding:9px 12px;
+      border-radius:999px;
+      background:color-mix(in srgb, var(--secondary) 72%, white 28%);
+      border:1px solid color-mix(in srgb, var(--secondary) 86%, var(--line) 14%);
+      font-size:.9rem;
+    }
+
+    .resume-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      margin-top:24px;
+    }
+
+    .resume-column{
+      display:flex;
+      flex-direction:column;
+      gap:24px;
+    }
+
+    .resume-section{
+      padding:28px;
+      text-align:left;
+    }
+
+    .resume-section h2{
+      margin:0 0 16px;
+      font-size:1.5rem;
+      letter-spacing:-.03em;
+    }
+
+    .timeline{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .timeline-item{
+      padding:18px 0 0;
+      border-top:1px solid var(--line);
+    }
+
+    .timeline-item:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .timeline-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:8px;
+    }
+
+    .timeline-top h3{
+      margin:0;
+      font-size:1.02rem;
+    }
+
+    .timeline-top .meta{
+      color:var(--muted);
+      font-size:.93rem;
+      white-space:nowrap;
+    }
+
+    .timeline-sub{
+      margin:0 0 10px;
+      color:var(--primary);
+      font-weight:600;
+    }
+
+    .timeline-item ul{
+      margin:0;
+      padding-left:18px;
+      line-height:1.7;
+    }
+
+    .project-entry{
+      padding:18px 0 0;
+      border-top:1px solid var(--line);
+    }
+
+    .project-entry:first-child{
+      border-top:none;
+      padding-top:0;
+    }
+
+    .project-entry h3{
+      margin:0;
+      font-size:1.02rem;
+    }
+
+    .project-entry p{
+      margin:8px 0 0;
+      line-height:1.7;
+    }
+
+    .edu-card strong{
+      display:block;
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .edu-card p{
+      margin:0;
+      line-height:1.7;
+    }
+
+    @media (max-width: 980px){
+      .resume-hero,
+      .resume-grid{
+        grid-template-columns:1fr;
+      }
+
+      .resume-card,
+      .resume-side-card,
+      .resume-section{
+        padding:24px;
+      }
+
+      .timeline-top{
+        flex-direction:column;
+      }
+
+      .timeline-top .meta{
+        white-space:normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="topnav" aria-label="Primary">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="resume.html">Resume</a>
+    </nav>
+  </header>
+
+  <main class="resume-page">
+    <section class="resume-hero">
+      <article class="resume-card">
+        <div class="resume-kicker">✦ Resume</div>
+        <h1 class="resume-name">Daria Brown</h1>
+        <p class="resume-role">Game Developer • Project Manager</p>
+        <p class="resume-summary">
+          Boise State University GIMM student with experience in game development, project coordination, and interactive media. I enjoy building thoughtful, engaging work across Unity, Unreal, and web-based experiences, with a strong interest in collaboration, storytelling, and polished creative production.
+        </p>
+        <div class="resume-cta-row">
+          <a class="resume-pill" href="mailto:dariabrown307@gmail.com">dariabrown307@gmail.com</a>
+          <a class="resume-pill" href="https://www.linkedin.com/in/dariabrown/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="resume-pill" href="https://daria-astahova.github.io/" target="_blank" rel="noreferrer">Portfolio</a>
+          <a class="resume-pill" href="https://www.youtube.com/@AstahovaGames" target="_blank" rel="noreferrer">YouTube</a>
+        </div>
+      </article>
+
+      <aside class="resume-side-card">
+        <div>
+          <p class="side-label">Contact</p>
+          <div class="contact-stack">
+            <a href="mailto:dariabrown307@gmail.com">dariabrown307@gmail.com</a>
+            <a href="tel:12087206045">208 720 6045</a>
+            <a href="https://www.linkedin.com/in/dariabrown/" target="_blank" rel="noreferrer">linkedin.com/in/dariabrown</a>
+            <a href="https://daria-astahova.github.io/" target="_blank" rel="noreferrer">daria-astahova.github.io</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="side-label">Core Skills</p>
+          <div class="chip-wrap">
+            <span class="chip">Project Management</span>
+            <span class="chip">Game Development</span>
+            <span class="chip">Problem Solving</span>
+            <span class="chip">Unity</span>
+            <span class="chip">Blender</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="side-label">Certificates</p>
+          <div class="mini-list">
+            <span>Career Essentials in Project Management by Microsoft and LinkedIn</span>
+            <span>Swift 5 Essential Training</span>
+            <span>Google Analytics 4 (GA4) Essential Training</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="resume-grid">
+      <div class="resume-column">
+        <section class="resume-section">
+          <div class="section-kicker">Experience</div>
+          <h2>Work Experience</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3>The Keith and Catherine Stein Luminary</h3>
+                <span class="meta">09/2025 – Present • Boise, Idaho</span>
+              </div>
+              <p class="timeline-sub">Project Team Lead</p>
+              <ul>
+                <li>Oversee group objectives and develop plans to support efficient deliverables.</li>
+                <li>Focus on Unreal nDisplay and Switchboard workflows to create seamless project connections and builds.</li>
+                <li>Help deliver an interactive Idaho history exhibit for Treefort Music Fest.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3>Bogus Basin</h3>
+                <span class="meta">01/2024 – Present • Boise, Idaho</span>
+              </div>
+              <p class="timeline-sub">Ski Instructor — Seasonal</p>
+              <ul>
+                <li>Teach students of all ages using clear instruction, patience, and encouragement.</li>
+                <li>Adapt lessons to individual needs while maintaining a safe and engaging learning environment.</li>
+              </ul>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-top">
+                <h3>Lefty’s Bar and Grill</h3>
+                <span class="meta">07/2021 – Present</span>
+              </div>
+              <p class="timeline-sub">Bartender / Server — Part-Time</p>
+              <ul>
+                <li>Handle guest service, orders, and day-to-day shift responsibilities in a fast-paced environment.</li>
+                <li>Support team coordination and smooth service flow during busy hours.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <div class="section-kicker">Projects</div>
+          <h2>Selected Projects</h2>
+
+          <article class="project-entry">
+            <h3>Idaho History — Treefort Exhibit at The Stein Luminary</h3>
+            <p><strong>Team Lead &amp; Lead Developer | 09/2025 – Present</strong></p>
+            <p>
+              Interactive Idaho history exhibit featuring touch-activated screens that highlight locations around Idaho through immersive digital storytelling and exhibit design.
+            </p>
+          </article>
+
+          <article class="project-entry">
+            <h3>Let’s Get Famous — Multiplayer Party Game</h3>
+            <p><strong>Co-Creator &amp; Developer | 02/2024 – Present</strong></p>
+            <p>
+              Personal and senior special topics project building a Unity and web-based party game with second-screen interaction and multiplayer systems.
+            </p>
+          </article>
+
+          <article class="project-entry">
+            <h3>Location Based PECS Board — iOS Prototype</h3>
+            <p><strong>Co-Developer | 03/2025 – 05/2025</strong></p>
+            <p>
+              Explored map-based interaction for viewing, adding, editing, and deleting pins, including location notes and assigning PECS cards to a geographical radius.
+            </p>
+          </article>
+        </section>
+      </div>
+
+      <div class="resume-column">
+        <section class="resume-section">
+          <div class="section-kicker">Education</div>
+          <h2>Education</h2>
+          <div class="edu-card">
+            <strong>Games, Interactive Media, and Mobile Technology</strong>
+            <p>Boise State University</p>
+            <p>08/2021 – Present • Boise, Idaho</p>
+            <p>Minors: Visual Arts, Dance</p>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <div class="section-kicker">Strengths</div>
+          <h2>What I Bring</h2>
+          <div class="chip-wrap">
+            <span class="chip">Interactive Media</span>
+            <span class="chip">Team Leadership</span>
+            <span class="chip">Creative Production</span>
+            <span class="chip">User-Focused Design</span>
+            <span class="chip">Unity Workflows</span>
+            <span class="chip">Unreal Pipelines</span>
+            <span class="chip">Exhibit Development</span>
+            <span class="chip">Cross-Disciplinary Collaboration</span>
+          </div>
+        </section>
+
+        <section class="resume-section">
+          <div class="section-kicker">Links</div>
+          <h2>Online</h2>
+          <div class="mini-list">
+            <a href="https://daria-astahova.github.io/" target="_blank" rel="noreferrer">Portfolio Website</a>
+            <a href="https://www.linkedin.com/in/dariabrown/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.youtube.com/@AstahovaGames" target="_blank" rel="noreferrer">YouTube</a>
+            <a href="mailto:dariabrown307@gmail.com">dariabrown307@gmail.com</a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Daria Brown</p>
+  </footer>
+</body>
+</html>
