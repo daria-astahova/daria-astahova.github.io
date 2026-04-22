@@ -3,11 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Let’s Get Famous, Daria Brown</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="script" href="carousel.js">
-</head>
+  <title>Let's Get Famous, Daria Brown</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="script" href="carousel.js">
+  <style>
 
+/* ── Playtest section ──────────────────────────────────────── */
+.playtest-section {
+  margin-bottom: 80px;
+}
+
+.playtest-header {
+  margin-bottom: 36px;
+}
+
+.playtest-header h2 {
+  font-size: 22px;
+  margin: 8px 0 10px;
+}
+
+.playtest-header p {
+  color: var(--muted);
+  font-size: 15px;
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ── Stage tabs ────────────────────────────────────────────── */
+.pt-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.pt-tab {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  transition: all .2s ease;
+}
+
+.pt-tab.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.pt-tab:hover:not(.active):not(:disabled) {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.pt-tab-future {
+  opacity: .38;
+  cursor: not-allowed;
+}
+
+.pt-tab-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.pt-tab-sub {
+  display: block;
+  font-size: 11px;
+  opacity: .72;
+  margin-top: 2px;
+  letter-spacing: .02em;
+}
+
+/* ── Hidden stage ──────────────────────────────────────────── */
+.pt-stage.hidden { display: none; }
+
+/* ── Metric row ────────────────────────────────────────────── */
+.pt-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.pt-metric {
+  background: color-mix(in srgb, var(--secondary) 45%, white 55%);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 18px 18px;
+  text-align: center;
+}
+
+.pt-metric-num {
+  display: block;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.pt-metric-den {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.pt-metric-label {
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 7px 0 0;
+}
+
+/* ── Two-col layout ────────────────────────────────────────── */
+.pt-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 640px) {
+  .pt-two-col { grid-template-columns: 1fr; }
+}
+
+/* ── Shared card ───────────────────────────────────────────── */
+.pt-card {
+  background: color-mix(in srgb, var(--secondary) 38%, white 62%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px 22px;
+}
+
+.pt-card-wide {
+  background: color-mix(in srgb, var(--secondary) 38%, white 62%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 28px 22px;
+  margin-bottom: 18px;
+}
+
+.pt-card-title {
+  font-size: 11px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+/* ── Score bars ────────────────────────────────────────────── */
+.pt-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pt-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pt-bar-score {
+  width: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pt-bar-track {
+  flex: 1;
+  height: 26px;
+  background: color-mix(in srgb, var(--secondary) 55%, white 45%);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.pt-bar-fill {
+  height: 100%;
+  width: 0;
+  background: var(--primary);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,.88);
+  min-width: 28px;
+  transition: width .9s cubic-bezier(.16,1,.3,1);
+}
+
+/* ── Pacing rings ──────────────────────────────────────────── */
+.pt-pacing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pt-pace-item {
+  background: color-mix(in srgb, var(--secondary) 55%, white 45%);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+
+.pt-pace-pct {
+  display: block;
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  line-height: 1;
+  color: var(--primary);
+}
+
+.pt-pace-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+.pt-pace-bar {
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 12px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.pt-pace-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(.16,1,.3,1);
+}
+
+/* ── Issues ────────────────────────────────────────────────── */
+.pt-issues {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pt-issues li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.pt-issues li:last-child { border-bottom: none; }
+
+.pt-pill {
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
+  padding: 2px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Quotes ────────────────────────────────────────────────── */
+.pt-quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .pt-quote-grid { grid-template-columns: 1fr; }
+}
+
+.pt-quote {
+  margin: 0;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 14px 14px 0;
+  padding: 18px 20px;
+}
+
+.pt-quote p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text);
+  font-style: italic;
+}
+
+.pt-quote cite {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: normal;
+  letter-spacing: .05em;
+}
+
+/* ── Animate bars on load ──────────────────────────────────── */
+.pt-bar-fill.animated { width: var(--pct); }
+
+  </style>
+</head>
 
 <body>
   <header class="topbar">
@@ -18,192 +332,346 @@
       <a href="resume.html">Resume</a>
     </nav>
   </header>
- 
-<main class="project-page">
 
-  <section class="project-hero">
-    <span class="project-eyebrow">Featured Project</span>
-    <h1 class="project-title">Let’s Get Famous</h1>
-    <p class="project-subtitle">Multiplayer Second-screen Party Game Developed in Unity </p>
-    </div>
-  </section>
+  <main class="project-page">
 
-  <section class="project-facts">
-    <ul>
-      <li><strong>Role</strong> Creator · Developer</li>
-      <li><strong>Tools</strong>Unity · C# · Socket.io · HTML · Blender · Web Design</li>
-      <li><strong>Duration</strong>Spring 2024 - Present</li>
-      <li><strong>Team</strong>3 people</li>
-      <li><strong>Platform</strong>PC · Web</li>
-    </ul>
-  </section>
-  <!-- <section class="project-split"></section> -->
-  <section class="stage">
-    <div class="stage-inner">
-      <div class="stage-bg"></div>
-  
-      <iframe
-        class="stage-poster"
-        src="https://www.youtube.com/embed/cz3yOpcbvkE?si=tcoJX0TOzaK8wmgU"
-        title="Featured video"
-        frameborder="0"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
-  
-  
+    <section class="project-hero">
+      <span class="project-eyebrow">Featured Project</span>
+      <h1 class="project-title">Let's Get Famous</h1>
+      <p class="project-subtitle">Multiplayer Second-screen Party Game Developed in Unity</p>
+    </section>
 
-  <section class="project-block">
-    <h2>Overview</h2>
-    <p>
-    Using Unity and wed development, Let's Get Famous allows for second-screen multiplayer gampley based on a personal boardgame created by my friend Anthony Rice, using Socket.io. In this game you and three friends will compete in a "hydrating" game that will not only depend on the luck of the dice, but player commitment aswell. With chanllenges including personal knowledge, skills, and teamwork you and your friends will compete to become an A-list Celeberty!
-    </p>
-  </section>
+    <section class="project-facts">
+      <ul>
+        <li><strong>Role</strong> Creator · Developer</li>
+        <li><strong>Tools</strong> Unity · C# · Socket.io · HTML · Blender · Web Design</li>
+        <li><strong>Duration</strong> Spring 2024 - Present</li>
+        <li><strong>Team</strong> 3 people</li>
+        <li><strong>Platform</strong> PC · Web</li>
+      </ul>
+    </section>
 
-  <section class="project-block">
-    <h2>My Role & Contributions</h2>
-    <ul class="project-list">
-      <li>Designed core game mechanics and ruleset</li>
-      <li>Implemented gameplay systems in Unity</li>
-      <li>Developed multiplayer turn logic</li>
-      <li>Managed project structure and version control</li>
-    </ul>
-  </section>
+    <section class="stage">
+      <div class="stage-inner">
+        <div class="stage-bg"></div>
+        <iframe
+          class="stage-poster"
+          src="https://www.youtube.com/embed/cz3yOpcbvkE?si=tcoJX0TOzaK8wmgU"
+          title="Featured video"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
 
-     
-  <h2>Project Gallery</h2>
+    <section class="project-block">
+      <h2>Overview</h2>
+      <p>
+        Using Unity and web development, Let's Get Famous allows for second-screen multiplayer gameplay based on a personal board game created by my friend Anthony Rice, using Socket.io. In this game you and your friends will compete in a "hydrating" game that will not only depend on the luck of the dice, but player commitment as well. With challenges including personal knowledge, skills, and teamwork you and your friends will compete to become an A-list Celebrity!
+      </p>
+    </section>
 
-  <div class="carousel" aria-label="Lets Get Famous photo gallery">
-    <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+    <section class="project-block">
+      <h2>My Role & Contributions</h2>
+      <ul class="project-list">
+        <li>Designed core game mechanics and ruleset</li>
+        <li>Implemented gameplay systems in Unity</li>
+        <li>Developed multiplayer turn logic</li>
+        <li>Managed project structure and version control</li>
+      </ul>
+    </section>
 
-    <div class="carousel-track-container ">
-      <div class="carousel-track">
-        <div class="carousel-slide active">
-          <img src="Images/LetsGetFamousAllScreen.png" alt=" Let Get Famous All Screen" />
+    <h2>Project Gallery</h2>
+    <div class="carousel" aria-label="Lets Get Famous photo gallery">
+      <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+      <div class="carousel-track-container">
+        <div class="carousel-track">
+          <div class="carousel-slide active">
+            <img src="Images/LetsGetFamousAllScreen.png" alt="Let's Get Famous All Screen" />
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/Luminary3.png" alt="Interactive exhibit content displayed on screen" />
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/Luminary4.png" alt="Development and testing process for the exhibit" />
+          </div>
+          <div class="carousel-slide">
+            <img src="Images/LuminarySetUp.png" alt="The team working on the Idaho History Project" />
+          </div>
         </div>
-        <div class="carousel-slide">
-          <img src="Images/Luminary3.png" alt="Interactive exhibit content displayed on screen" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Images/Luminary4.png" alt="Development and testing process for the exhibit" />
-        </div>
-        <div class="carousel-slide">
-          <img src="Images/LuminarySetUp.png" alt="The team working on the Idaho History Project" />
-        </div>
+      </div>
+      <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
+      <div class="carousel-dots" aria-label="Carousel navigation">
+        <button class="dot active" aria-label="Go to image 1"></button>
+        <button class="dot" aria-label="Go to image 2"></button>
+        <button class="dot" aria-label="Go to image 3"></button>
+        <button class="dot" aria-label="Go to image 4"></button>
       </div>
     </div>
 
-    <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
-
-    <div class="carousel-dots" aria-label="Carousel navigation">
-      <button class="dot active" aria-label="Go to image 1"></button>
-      <button class="dot" aria-label="Go to image 2"></button>
-      <button class="dot" aria-label="Go to image 3"></button>
-      <button class="dot" aria-label="Go to image 4"></button>
-    </div>
-  </div>
-</section>
-
-  <section class="project-block">
-    <h2>Process & Development</h2>
-    <p>
-      <h4>JANUARY - FEBRUARY 2026:</h4>
-      During this phase, I started shaping the vision for the board by experimenting with styles for the title screen and the board screen. This exploration played a key role in further developing the game’s aesthetic and establishing a more enjoyable experience. Including a few concept animations...
-    </p>
-    <p>
-      <a href="https://youtu.be/cz3yOpcbvkE?si=9kb-ABJslrn-2Nm3"
-         target="_blank"
-         rel="noreferrer"
-         class="project-demo-link">
-        Watch First Animation Concept →
-      </a>
-    </p>
-    <p>
-      <a href="https://youtu.be/z-mrQplYiHI"
-         target="_blank"
-         rel="noreferrer"
-         class="project-demo-link">
-        Watch Title Screen Animation Progress →
-      </a>
-    </p>
-    <p>
-      <h4> AUGUST - NOVEMBER 2025:</h4>
-      This phase also focused heavily on
-      building and testing the multiplayer connection and synchronization systems.
-    </p>
-    <p>
-      <a href="https://youtu.be/zObh0H-V2bc?si=2CJiLqxRtR2jEc5K"
-         target="_blank"
-         rel="noreferrer"
-         class="project-demo-link">
-        Watch Multiplayer Connection Demo →
-      </a>
-    </p>
-  
-    <!-- <div class="project-gallery">
-      <img src="images/IMG_7033.jpg" alt="Prototype">
-      <img src="images/IMG_7033.jpg" alt="Gameplay">
-      <img src="images/IMG_7033.jpg" alt="UI iteration">
-    </div> -->
-  </section>
-  
-
-  <section class="project-split">
-    <div>
-      <h2>Download Game</h2>
+    <section class="project-block">
+      <h2>Process & Development</h2>
       <p>
-       Currently there is no downloadable link for this game while it is still in development!
+        <h4>JANUARY – FEBRUARY 2026:</h4>
+        During this phase, I started shaping the vision for the board by experimenting with styles for the title screen and the board screen. This exploration played a key role in further developing the game's aesthetic and establishing a more enjoyable experience. Including a few concept animations...
       </p>
-    </div>
-    <div>
-      <h2>
-        <a href="https://lets-get-famous-github-io.onrender.com/" target="_blank" rel="noreferrer">
-          Player Link
+      <p>
+        <a href="https://youtu.be/cz3yOpcbvkE?si=9kb-ABJslrn-2Nm3" target="_blank" rel="noreferrer" class="project-demo-link">
+          Watch First Animation Concept →
         </a>
-      </h2>
-      
-      <p>
-        In it's own repository on github and hosted by Render. 
       </p>
-    </div>
-  </section>
+      <p>
+        <a href="https://youtu.be/z-mrQplYiHI" target="_blank" rel="noreferrer" class="project-demo-link">
+          Watch Title Screen Animation Progress →
+        </a>
+      </p>
+      <p>
+        <h4>AUGUST – NOVEMBER 2025:</h4>
+        This phase focused heavily on building and testing the multiplayer connection and synchronization systems.
+      </p>
+      <p>
+        <a href="https://youtu.be/zObh0H-V2bc?si=2CJiLqxRtR2jEc5K" target="_blank" rel="noreferrer" class="project-demo-link">
+          Watch Multiplayer Connection Demo →
+        </a>
+      </p>
+    </section>
 
-  <section class="project-block accent">
-    <h2>Challenges & Solutions</h2>
-    <p>
-      Synchronizing player actions in a multiplayer environment required careful
-      structuring of the game loop. This was solved by clearly separating player
-      input, resolution, and feedback states.
-    </p>
-  </section>
+    <!-- ═══════════════════════════════════════════════════════
+         PLAYTESTING SECTION
+    ════════════════════════════════════════════════════════ -->
+    <section class="project-block playtest-section">
 
-  <section class="project-block">
-    <h2>Outcome</h2>
-    <p>
-      The final game successfully supports multiplayer sessions while maintaining
-      the social energy of the original board game. This project strengthened my
-      understanding of multiplayer systems and collaborative design.
-    </p>
-  </section>
+      <div class="playtest-header">
+        <span class="project-eyebrow">Research &amp; Iteration</span>
+        <h2>Playtesting</h2>
+        <p>Real feedback from live sessions — tracked across every stage of development.</p>
+      </div>
 
-  <section class="project-block">
-    <h2>What I Learned</h2>
-    <p>
-      This project reinforced the importance of iteration, playtesting, and clear
-      system design while expanding my technical skills in Unity and multiplayer
-      logic.
-    </p>
-  </section>
+      <!-- Stage selector -->
+      <div class="pt-tabs" role="tablist" aria-label="Playtest stages">
+        <button class="pt-tab active" role="tab" aria-selected="true" data-stage="0">
+          <span class="pt-tab-label">Spring 2026</span>
+          <span class="pt-tab-sub">19 players · 6 sessions</span>
+        </button>
+        <button class="pt-tab pt-tab-future" role="tab" aria-selected="false" data-stage="1" disabled>
+          <span class="pt-tab-label">Stage 2</span>
+          <span class="pt-tab-sub">Coming soon</span>
+        </button>
+        <button class="pt-tab pt-tab-future" role="tab" aria-selected="false" data-stage="2" disabled>
+          <span class="pt-tab-label">Stage 3</span>
+          <span class="pt-tab-sub">Coming soon</span>
+        </button>
+      </div>
 
-  <section class="project-links">
-    <a href="https://lets-get-famous.github.io/">Play Game</a>
-    <a href="#"> </a>
-    <a href="https://www.youtube.com/watch?v=zObh0H-V2bc&t=25s">Watch Demo</a>
-  </section>
+      <!-- ── Stage 0 ── -->
+      <div class="pt-stage" data-stage-content="0">
 
-</main>
+        <!-- Metrics -->
+        <div class="pt-metrics">
+          <div class="pt-metric">
+            <span class="pt-metric-num">8.2<span class="pt-metric-den">/10</span></span>
+            <p class="pt-metric-label">avg enjoyment</p>
+          </div>
+          <div class="pt-metric">
+            <span class="pt-metric-num">19</span>
+            <p class="pt-metric-label">playtesters</p>
+          </div>
+          <div class="pt-metric">
+            <span class="pt-metric-num">~90<span class="pt-metric-den">%</span></span>
+            <p class="pt-metric-label">would play again</p>
+          </div>
+          <div class="pt-metric">
+            <span class="pt-metric-num">84<span class="pt-metric-den">%</span></span>
+            <p class="pt-metric-label">scored 8 or above</p>
+          </div>
+        </div>
+
+        <!-- Score bars + Pacing side by side -->
+        <div class="pt-two-col">
+
+          <div class="pt-card">
+            <p class="pt-card-title">Enjoyment score distribution</p>
+            <div class="pt-bars">
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">10</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:100%" data-pct="100">6</div></div>
+              </div>
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">9</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:50%" data-pct="50">3</div></div>
+              </div>
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">8</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:100%" data-pct="100">6</div></div>
+              </div>
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">7</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:17%" data-pct="17">1</div></div>
+              </div>
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">6</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:17%" data-pct="17">1</div></div>
+              </div>
+              <div class="pt-bar-row">
+                <span class="pt-bar-score">5</span>
+                <div class="pt-bar-track"><div class="pt-bar-fill" style="--pct:33%" data-pct="33">2</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-card">
+            <p class="pt-card-title">Pacing feedback</p>
+            <div class="pt-pacing-grid">
+              <div class="pt-pace-item">
+                <span class="pt-pace-pct">58%</span>
+                <span class="pt-pace-label">Just right</span>
+                <div class="pt-pace-bar"><div class="pt-pace-bar-fill" style="width:58%;background:var(--primary)"></div></div>
+              </div>
+              <div class="pt-pace-item">
+                <span class="pt-pace-pct">21%</span>
+                <span class="pt-pace-label">Too fast</span>
+                <div class="pt-pace-bar"><div class="pt-pace-bar-fill" style="width:21%;background:var(--accent)"></div></div>
+              </div>
+              <div class="pt-pace-item">
+                <span class="pt-pace-pct">11%</span>
+                <span class="pt-pace-label">Too slow</span>
+                <div class="pt-pace-bar"><div class="pt-pace-bar-fill" style="width:11%;background:#c4a882"></div></div>
+              </div>
+              <div class="pt-pace-item">
+                <span class="pt-pace-pct">10%</span>
+                <span class="pt-pace-label">Unclear</span>
+                <div class="pt-pace-bar"><div class="pt-pace-bar-fill" style="width:10%;background:var(--muted)"></div></div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /pt-two-col -->
+
+        <!-- Issues full width -->
+        <div class="pt-card-wide">
+          <p class="pt-card-title">Top UX issues identified</p>
+          <ul class="pt-issues">
+            <li><span class="pt-pill">7×</span> Scroll required to find roll button and see active turn</li>
+            <li><span class="pt-pill">5×</span> Couldn't identify own piece or character on the board</li>
+            <li><span class="pt-pill">4×</span> Turn transitions felt abrupt and no clear handoff signal</li>
+            <li><span class="pt-pill">4×</span> Bugs noticed during session forgiven, but visible</li>
+            <li><span class="pt-pill">2×</span> Hard to track other players' progress</li>
+          </ul>
+        </div>
+
+        <!-- Quotes -->
+        <div class="pt-card-wide">
+          <p class="pt-card-title">What players said</p>
+          <div class="pt-quote-grid">
+            <blockquote class="pt-quote">
+    
+              <p>"I would absolutely pay money for this as a finished product."</p>
+              <cite>— Anonymous, score 10</cite>
+            </blockquote>
+      
+            <blockquote class="pt-quote">
+              <p>"Really great execution of the Jackbox design. Felt unique and familiar at the same time."</p>
+              <cite>— Anonymous</cite>
+            </blockquote>
+        
+            </blockquote>
+          </div>
+        </div>
+
+      </div><!-- /pt-stage 0 -->
+
+    </section>
+    <!-- ═══════════════════════════════════════════════════════ -->
+
+    <section class="project-split">
+      <div>
+        <h2>Download Game</h2>
+        <p>Currently there is no downloadable link for this game while it is still in development!</p>
+      </div>
+      <div>
+        <h2>
+          <a href="https://lets-get-famous-github-io.onrender.com/" target="_blank" rel="noreferrer">
+            Player Link
+          </a>
+        </h2>
+        <p>In its own repository on GitHub and hosted by Render.</p>
+      </div>
+    </section>
+
+    <section class="project-block accent">
+      <h2>Challenges &amp; Solutions</h2>
+      <p>
+        Synchronizing player actions in a multiplayer environment required careful
+        structuring of the game loop. This was solved by clearly separating player
+        input, resolution, and feedback states.
+      </p>
+    </section>
+
+    <section class="project-block">
+      <h2>Outcome</h2>
+      <p>
+        The final game successfully supports multiplayer sessions while maintaining
+        the social energy of the original board game. This project strengthened my
+        understanding of multiplayer systems and collaborative design.
+      </p>
+    </section>
+
+    <section class="project-block">
+      <h2>What I Learned</h2>
+      <p>
+        This project reinforced the importance of iteration, playtesting, and clear
+        system design while expanding my technical skills in Unity and multiplayer
+        logic.
+      </p>
+    </section>
+
+    <section class="project-links">
+      <a href="https://lets-get-famous.github.io/">Play Game</a>
+      <a href="#"> </a>
+      <a href="https://www.youtube.com/watch?v=zObh0H-V2bc&t=25s">Watch Demo</a>
+    </section>
+
+  </main>
+
+  <script>
+    /* Tab switching */
+    (function () {
+      var tabs = document.querySelectorAll('.pt-tab:not(:disabled)');
+      var stages = document.querySelectorAll('.pt-stage');
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var target = tab.dataset.stage;
+          tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+          stages.forEach(function (s) { s.classList.add('hidden'); });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          var active = document.querySelector('.pt-stage[data-stage-content="' + target + '"]');
+          if (active) {
+            active.classList.remove('hidden');
+            animateBars(active);
+          }
+        });
+      });
+
+      /* Animate bars in when visible */
+      function animateBars(container) {
+        var fills = container.querySelectorAll('.pt-bar-fill');
+        fills.forEach(function (el, i) {
+          el.style.width = '0';
+          setTimeout(function () {
+            el.style.width = el.dataset.pct + '%';
+          }, i * 80 + 120);
+        });
+      }
+
+      /* Run on page load for the default visible stage */
+      var defaultStage = document.querySelector('.pt-stage:not(.hidden)');
+      if (defaultStage) {
+        setTimeout(function () { animateBars(defaultStage); }, 300);
+      }
+    })();
+  </script>
 
 </body>
 </html>
