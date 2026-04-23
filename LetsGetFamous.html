@@ -6,321 +6,7 @@
   <title>Astahova Games</title>
   <link rel="stylesheet" href="style.css">
   <link rel="script" href="carousel.js">
-  <style>
-
-/* ── Playtest section ──────────────────────────────────────── */
-.playtest-section {
-  margin-bottom: 80px;
-}
-
-.playtest-header {
-  margin-bottom: 36px;
-}
-
-.playtest-header h2 {
-  font-size: 22px;
-  margin: 8px 0 10px;
-}
-
-.playtest-header p {
-  color: var(--muted);
-  font-size: 15px;
-  margin: 0;
-  max-width: 520px;
-}
-
-/* ── Stage tabs ────────────────────────────────────────────── */
-.pt-tabs {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 36px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.pt-tab {
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 10px 20px;
-  cursor: pointer;
-  text-align: left;
-  font-family: inherit;
-  transition: all .2s ease;
-}
-
-.pt-tab.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
-}
-
-.pt-tab:hover:not(.active):not(:disabled) {
-  border-color: var(--primary);
-  color: var(--primary);
-}
-
-.pt-tab-future {
-  opacity: .38;
-  cursor: not-allowed;
-}
-
-.pt-tab-label {
-  display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: .04em;
-}
-
-.pt-tab-sub {
-  display: block;
-  font-size: 11px;
-  opacity: .72;
-  margin-top: 2px;
-  letter-spacing: .02em;
-}
-
-/* ── Hidden stage ──────────────────────────────────────────── */
-.pt-stage.hidden { display: none; }
-
-/* ── Metric row ────────────────────────────────────────────── */
-.pt-metrics {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  gap: 14px;
-  margin-bottom: 24px;
-}
-
-.pt-metric {
-  background: color-mix(in srgb, var(--secondary) 45%, white 55%);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  padding: 22px 18px 18px;
-  text-align: center;
-}
-
-.pt-metric-num {
-  display: block;
-  font-size: 34px;
-  font-weight: 900;
-  letter-spacing: -.03em;
-  color: var(--primary);
-  line-height: 1;
-}
-
-.pt-metric-den {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--muted);
-}
-
-.pt-metric-label {
-  font-size: 11px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 7px 0 0;
-}
-
-/* ── Two-col layout ────────────────────────────────────────── */
-.pt-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 18px;
-}
-
-@media (max-width: 640px) {
-  .pt-two-col { grid-template-columns: 1fr; }
-}
-
-/* ── Shared card ───────────────────────────────────────────── */
-.pt-card {
-  background: color-mix(in srgb, var(--secondary) 38%, white 62%);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px 24px 22px;
-}
-
-.pt-card-wide {
-  background: color-mix(in srgb, var(--secondary) 38%, white 62%);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 26px 28px 22px;
-  margin-bottom: 18px;
-}
-
-.pt-card-title {
-  font-size: 11px;
-  letter-spacing: .28em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin: 0 0 20px;
-}
-
-/* ── Score bars ────────────────────────────────────────────── */
-.pt-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-}
-
-.pt-bar-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.pt-bar-score {
-  width: 18px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.pt-bar-track {
-  flex: 1;
-  height: 26px;
-  background: color-mix(in srgb, var(--secondary) 55%, white 45%);
-  border-radius: 7px;
-  overflow: hidden;
-}
-
-.pt-bar-fill {
-  height: 100%;
-  width: 0;
-  background: var(--primary);
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 9px;
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(255,255,255,.88);
-  min-width: 28px;
-  transition: width .9s cubic-bezier(.16,1,.3,1);
-}
-
-/* ── Pacing rings ──────────────────────────────────────────── */
-.pt-pacing-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.pt-pace-item {
-  background: color-mix(in srgb, var(--secondary) 55%, white 45%);
-  border-radius: 14px;
-  padding: 16px;
-  text-align: center;
-}
-
-.pt-pace-pct {
-  display: block;
-  font-size: 26px;
-  font-weight: 900;
-  letter-spacing: -.02em;
-  line-height: 1;
-  color: var(--primary);
-}
-
-.pt-pace-label {
-  display: block;
-  font-size: 11px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 5px;
-}
-
-.pt-pace-bar {
-  height: 4px;
-  border-radius: 2px;
-  margin-top: 12px;
-  background: var(--line);
-  overflow: hidden;
-}
-
-.pt-pace-bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  transition: width 1s cubic-bezier(.16,1,.3,1);
-}
-
-/* ── Issues ────────────────────────────────────────────────── */
-.pt-issues {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pt-issues li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 11px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 13.5px;
-  color: var(--text);
-  line-height: 1.4;
-}
-
-.pt-issues li:last-child { border-bottom: none; }
-
-.pt-pill {
-  background: var(--primary);
-  color: #fff;
-  border-radius: 8px;
-  padding: 2px 9px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .04em;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-/* ── Quotes ────────────────────────────────────────────────── */
-.pt-quote-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-@media (max-width: 640px) {
-  .pt-quote-grid { grid-template-columns: 1fr; }
-}
-
-.pt-quote {
-  margin: 0;
-  background: var(--surface);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 14px 14px 0;
-  padding: 18px 20px;
-}
-
-.pt-quote p {
-  margin: 0 0 10px;
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text);
-  font-style: italic;
-}
-
-.pt-quote cite {
-  font-size: 11px;
-  color: var(--muted);
-  font-style: normal;
-  letter-spacing: .05em;
-}
-
-/* ── Animate bars on load ──────────────────────────────────── */
-.pt-bar-fill.animated { width: var(--pct); }
-
-  </style>
+  <link rel="script" href="data.js">
 </head>
 
 <body>
@@ -436,14 +122,51 @@
         </a>
       </p>
     </section>
+    <section class="project-split">
+      <div>
+        <h2>Download Game</h2>
+        <p>Currently there is no downloadable link for this game while it is still in development!</p>
+      </div>
+      <div>
+        <h2>
+          <a href="https://lets-get-famous-github-io.onrender.com/" target="_blank" rel="noreferrer">
+            Player Link
+          </a>
+        </h2>
+        <p>In its own repository on GitHub and hosted by Render.</p>
+      </div>
+    </section>
 
-    <!-- ═══════════════════════════════════════════════════════
-         PLAYTESTING SECTION
-    ════════════════════════════════════════════════════════ -->
+    <section class="project-block accent">
+      <h2>Challenges &amp; Solutions</h2>
+      <p>
+        Synchronizing player actions in a multiplayer environment required careful
+        structuring of the game loop. This was solved by clearly separating player
+        input, resolution, and feedback states.
+      </p>
+    </section>
+
+    <section class="project-block">
+      <h2>Outcome</h2>
+      <p>
+        The final game successfully supports multiplayer sessions while maintaining
+        the social energy of the original board game. This project strengthened my
+        understanding of multiplayer systems and collaborative design.
+      </p>
+    </section>
+
+    <section class="project-block">
+      <h2>What I Learned</h2>
+      <p>
+        This project reinforced the importance of iteration, playtesting, and clear
+        system design while expanding my technical skills in Unity and multiplayer
+        logic.
+      </p>
+    </section>
+
     <section class="project-block playtest-section">
 
       <div class="playtest-header">
-        <span class="project-eyebrow">Research &amp; Iteration</span>
         <h2>Playtesting</h2>
         <p>Real feedback from live sessions — tracked across every stage of development.</p>
       </div>
@@ -451,7 +174,7 @@
       <!-- Stage selector -->
       <div class="pt-tabs" role="tablist" aria-label="Playtest stages">
         <button class="pt-tab active" role="tab" aria-selected="true" data-stage="0">
-          <span class="pt-tab-label">Spring 2026</span>
+          <span class="pt-tab-label"> April 2026</span>
           <span class="pt-tab-sub">19 players · 6 sessions</span>
         </button>
         <button class="pt-tab pt-tab-future" role="tab" aria-selected="false" data-stage="1" disabled>
@@ -584,47 +307,6 @@
     </section>
     <!-- ═══════════════════════════════════════════════════════ -->
 
-    <section class="project-split">
-      <div>
-        <h2>Download Game</h2>
-        <p>Currently there is no downloadable link for this game while it is still in development!</p>
-      </div>
-      <div>
-        <h2>
-          <a href="https://lets-get-famous-github-io.onrender.com/" target="_blank" rel="noreferrer">
-            Player Link
-          </a>
-        </h2>
-        <p>In its own repository on GitHub and hosted by Render.</p>
-      </div>
-    </section>
-
-    <section class="project-block accent">
-      <h2>Challenges &amp; Solutions</h2>
-      <p>
-        Synchronizing player actions in a multiplayer environment required careful
-        structuring of the game loop. This was solved by clearly separating player
-        input, resolution, and feedback states.
-      </p>
-    </section>
-
-    <section class="project-block">
-      <h2>Outcome</h2>
-      <p>
-        The final game successfully supports multiplayer sessions while maintaining
-        the social energy of the original board game. This project strengthened my
-        understanding of multiplayer systems and collaborative design.
-      </p>
-    </section>
-
-    <section class="project-block">
-      <h2>What I Learned</h2>
-      <p>
-        This project reinforced the importance of iteration, playtesting, and clear
-        system design while expanding my technical skills in Unity and multiplayer
-        logic.
-      </p>
-    </section>
 
     <section class="project-links">
       <a href="https://lets-get-famous.github.io/">Play Game</a>
@@ -633,45 +315,5 @@
     </section>
 
   </main>
-
-  <script>
-    /* Tab switching */
-    (function () {
-      var tabs = document.querySelectorAll('.pt-tab:not(:disabled)');
-      var stages = document.querySelectorAll('.pt-stage');
-      tabs.forEach(function (tab) {
-        tab.addEventListener('click', function () {
-          var target = tab.dataset.stage;
-          tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-          stages.forEach(function (s) { s.classList.add('hidden'); });
-          tab.classList.add('active');
-          tab.setAttribute('aria-selected', 'true');
-          var active = document.querySelector('.pt-stage[data-stage-content="' + target + '"]');
-          if (active) {
-            active.classList.remove('hidden');
-            animateBars(active);
-          }
-        });
-      });
-
-      /* Animate bars in when visible */
-      function animateBars(container) {
-        var fills = container.querySelectorAll('.pt-bar-fill');
-        fills.forEach(function (el, i) {
-          el.style.width = '0';
-          setTimeout(function () {
-            el.style.width = el.dataset.pct + '%';
-          }, i * 80 + 120);
-        });
-      }
-
-      /* Run on page load for the default visible stage */
-      var defaultStage = document.querySelector('.pt-stage:not(.hidden)');
-      if (defaultStage) {
-        setTimeout(function () { animateBars(defaultStage); }, 300);
-      }
-    })();
-  </script>
-
 </body>
 </html>
